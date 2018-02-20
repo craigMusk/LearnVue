@@ -55,3 +55,5 @@ event.preventDefault()      ->  .prevent    //previene el reload
 <!-- just the modifier -->
 <form v-on:submit.prevent></form>
 
+***************************** FORMS ******************************
+... notas de video
