@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+    .style-separated-color{
+        color: red;
+    }
+    .style-separated-size{
+        font-size: 18px;
+    }
+</style>
+</head>
+
+<body>
+    <div id="vue">
+        <h2>Bindings</h2>
+        <p>
+            <b>Two binding</b>
+            <span>Name : {{ name }}</span>
+        </p>
+        <p>
+            <b>v-once (only once)</b>
+            <span v-once>{{ appName }}</span>
+        </p>
+        <p>
+            <b>v-html (to Render Html)</b>
+            <span v-html="linkX"></span>
+        </p>
+        <p>
+            <b>v-bind: (to property)</b>
+            <img :src="imagenX" alt="ninguno">
+        </p>
+        <p>
+            <b>v-bind:style (to Style)</b>
+            <span :style="appStyle">Single style</span>
+        </p>
+        <p>
+            <b>v-bind:style (to multiple Style)</b>
+            <span :style="[style1, style2]">Multiple style</span>
+        </p>
+        <p>
+            <b>v-bind:style (style Separeted as inline)</b>
+            <span :class="[styleSeparatedColor,styleSeparatedSize]">Style from inline</span>
+        </p>
+        <p>
+            <b>v-bind:style (style Separeted as array)</b>
+            <span :class="styleSeparated">Style from array</span>
+        </p>
+        <p>
+            <b>v-bind:style (conditional)</b>
+            <span :class="{
+                'style-separated-color' : isOnline
+            }">isOnline</span>
+        </p>
+        <p>
+            <b>v-bind:style (expression)</b>
+            <span :style="{ 'color' : isOnline ? 'red':'black'}">isOnline</span>
+        </p>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.2.5/dist/vue.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#vue',
+            data: {
+                appName: 'Mi App',
+                name: "Sam",
+                linkX: '<a href="/">Ir a</a>',
+                imagenX: 'http://via.placeholder.com/150x50',
+                appStyle : {
+                    color: '#FF6A00',
+                    fontFamily : 'Verdana',
+                    margin : 0
+                },
+                style1 : {
+                    color: 'white'
+                },
+                style2 : {
+                    fontfamily: 'Verdana',
+                    background: 'green'
+                },
+                styleSeparatedColor : 'style-separated-color',
+                styleSeparatedSize : 'style-separated-size',
+                styleSeparated : [
+                    'style-separated-color',
+                    'style-separated-size'
+                ],
+                isOnline : false
+            }
+        });        
+    </script>
+</body>
+
+</html>

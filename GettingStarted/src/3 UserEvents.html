@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="vue">
+        <div>
+            <p>v-on:click
+                <small>Shorthand syntyaxys:</small> @click</p>
+        </div>
+        <input type="text" v-model="consulta" style="width:100px">
+        <input type="button" v-on:click="btnMensajeClick" value="Mensaje">
+        <button type="button" v-on:click="btnParamClick">Param</buttont>
+            <button v-on:click="btnParam2Click('parametro2',$event)">Param2</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.2.5/dist/vue.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#vue',
+            data: {
+                consulta: ''
+            },
+            methods: {
+                btnMensajeClick: function () {
+                    alert(this.consulta);
+                },
+                btnParamClick: function (event) {
+                    alert(event.target.innerText);
+                },
+                btnParam2Click: function (param1, event) {
+                    alert(event.target.innerText + ' : ' + param1);
+                }
+            }
+        });        
+    </script>
+</body>
+
+</html>

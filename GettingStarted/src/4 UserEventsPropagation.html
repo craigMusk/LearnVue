@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="vue">
+        <form action="POST" action="someUrl">
+            <input type="search" v-model="buscado" v-bind:disable="isSearching">
+            <button type="button" v-on:click="onEnviarClick" v-bind:disable="isSearching">Enviar</button>
+        </form>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.2.5/dist/vue.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#vue',
+            data: {
+                buscado: '',
+                isSearching : false
+            },
+            methods: {
+                onEnviarClick: function () {
+                    isSearching = true;
+                    alert('Enviado');
+                }
+            }
+        });        
+    </script>
+</body>
+
+</html>

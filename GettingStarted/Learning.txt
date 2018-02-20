@@ -1,0 +1,57 @@
+//Course
+https://github.com/ecofic/course-vue-getting-started
+
+//CDN Vue.js
+https://unpkg.com/vue
+https://unpkg.com/vue@[version]/dist/vue.min.js
+
+//HttpClient lib
+https://unpkg.com/axios/dist/axios.min.js
+
+//Chrome extension
+https://github.com/vuejs/vue-devtools
+
+
+**************** Reglas *************
+- Los nombres no deben iniciar con: "$" o "_"
+
+
+**************** Lifecycle ************
+//States 
+1 new Vue()
+2 creation: cuando termina el template esta compilado
+3 mounting: inserta el view en DOM, al finalizar ya escucha cambios de data
+4 updating: modifica el virtualDOM y re-renderiza el UI
+5 destroy : destruye el view, deteniendo la revision de cambios  de datos
+
+//Pre states
+beforeCreate
+beforeMount
+beforeUpdate
+beforeDestroy
+
+//Post states
+created
+mounted
+updated
+destroyed
+
+******************************* Events ***************************
+https://vuejs.org/v2/guide/events.html#Event-Modifiers
+
+
+event.stopPropagation()     ->  .stop       //previene el bubblin
+event.preventDefault()      ->  .prevent    //previene el reload
+                                .seft       //solo ejecuta si este mismo inicio el evento
+<!-- the click event's propagation will be stopped -->
+<a v-on:click.stop="doThis"></a>
+
+<!-- the submit event will no longer reload the page -->
+<form v-on:submit.prevent="onSubmit"></form>
+
+<!-- modifiers can be chained -->
+<a v-on:click.stop.prevent="doThat"></a>
+
+<!-- just the modifier -->
+<form v-on:submit.prevent></form>
+
